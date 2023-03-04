@@ -1,0 +1,25 @@
+body{
+    display: block;
+    margin: 0;
+    padding: 0;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    background:#E8E8E8 ;
+}
+.navbar{
+    height: 60px;
+}
+.row{
+    border-radius: 0.9%;
+    border-width: 3px;
+    border-color: black;
+    background-color: #F8F8F8;
+}
+.card{
+    background:#FFFFFF;
+}
+.btn{
+    border-radius: 0.9%;
+}
+

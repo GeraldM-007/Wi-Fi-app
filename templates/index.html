@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block head  %}
+<title>Wi-Fi Manager</title>
+{% endblock  %}
+ 
+{% block body  %}
+<!-- Body Section-->
+<section class=" mt-5 p-5 p-lg-5 pt-md-5 pt-sm-5 text-center  text-sm-start col-lg-8 container-fluid ">
+    <div class="container">
+        <div class="row ">
+
+                <!-- Creating the speedtest section-->
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-5">
+                <div class="card">
+                    <div class="card-body text-black">
+                        <p>Download Speed: {{ download_speed }} Mbps </p>
+                        <p>Upload Speed: {{ upload_speed }} Mbps </p>
+                        <button class="btn btn-primary bg-dark btn-md text-lg rounded-0 float-end" type="button" id="notify-button">
+                            <a href="javascript:window.top.location.reload(true)" class="text-light" >RUN SPEED TEST</a>
+                    </button>
+
+                        <script>
+                            const button = document.querySelector('#notify-button');
+                            button.addEventListener('click', () => {
+                              fetch('/app')
+                                .then(response => response.text())
+                                .then(data => console.log(data))
+                                .catch(error => console.error(error));
+                            });
+                          </script>
+                        </div>
+            </div>
+            
+            <!-- The messaging box-->
+            <div class=" col-lg-12 col-md-12 col-sm-12 mt-5 mb-5">
+                <div class="card">
+                    <div class="card-body text-black">
+                        <h5> Messaging</h5>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem vitae praesentium voluptas voluptate.
+                        </p>
+
+                        <!-- The messaging button -->
+                        <button class="btn btn-primary bg-dark btn-md text-lg rounded-0 float-end" type="button" id="">Send Message</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <section>
+            <div class="container mt-5 bg-light text-light border-dark p-5 border-1">
+                <div class="">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ratione odio perspiciatis ipsa ut natus, quam recusandae similique cum nulla dolore, velit sapiente nemo aspernatur mollitia tenetur in magni, rerum officiis quia id architecto! Earum molestias consequuntur natus, eligendi illo expedita ducimus autem perferendis ratione sint numquam dignissimos enim laborum accusamus quisquam ea quaerat id libero alias esse? Possimus commodi incidunt ducimus quisquam excepturi, ipsam sint, laboriosam nihil repellendus ex expedita, minima laborum velit accusamus unde labore optio molestiae fuga quas perferendis consequatur! Veritatis officiis, vel repellendus eligendi numquam magnam amet animi consequuntur magni. Tenetur facilis nostrum id suscipit provident.
+                </div>
+            </div>
+        </section>
+</section>  
+{% endblock  %}
